@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-public class regiao {
+public class Regiao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,12 +13,12 @@ public class regiao {
 
     @ManyToOne
     @JoinColumn(name="habitat_id")
-    private habitat habitat;
+    private Habitat habitat;
 
-    public regiao() {
+    public Regiao() {
     }
 
-    public regiao(Integer id, String nome, basic.api.domain.habitat habitat) {
+    public Regiao(Integer id, String nome, Habitat habitat) {
         this.id = id;
         this.nome = nome;
         this.habitat = habitat;
@@ -40,11 +40,11 @@ public class regiao {
         this.nome = nome;
     }
 
-    public basic.api.domain.habitat getHabitat() {
+    public Habitat getHabitat() {
         return habitat;
     }
 
-    public void setHabitat(basic.api.domain.habitat habitat) {
+    public void setHabitat(Habitat habitat) {
         this.habitat = habitat;
     }
 
@@ -52,7 +52,7 @@ public class regiao {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        regiao regioes = (regiao) o;
+        Regiao regioes = (Regiao) o;
         return Objects.equals(id, regioes.id);
     }
 

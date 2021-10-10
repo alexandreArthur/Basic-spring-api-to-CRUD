@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-public class habitat {
+public class Habitat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +18,12 @@ public class habitat {
 
     @JsonIgnore
     @OneToMany(mappedBy = "habitat")
-    private List<regiao> regioes = new ArrayList<>();
+    private List<Regiao> regioes = new ArrayList<>();
 
-    public habitat() {
+    public Habitat() {
     }
 
-    public habitat(Integer id, String nome) {
+    public Habitat(Integer id, String nome) {
         this.id = id;
         this.nome = nome;
     }
@@ -44,11 +44,11 @@ public class habitat {
         this.nome = nome;
     }
 
-    public List<regiao> getRegioes() {
+    public List<Regiao> getRegioes() {
         return regioes;
     }
 
-    public void setRegioes(List<regiao> regioes) {
+    public void setRegioes(List<Regiao> regioes) {
         this.regioes = regioes;
     }
 
@@ -56,7 +56,7 @@ public class habitat {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        habitat habitat = (habitat) o;
+        Habitat habitat = (Habitat) o;
         return Objects.equals(id, habitat.id);
     }
 
